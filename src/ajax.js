@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function ajax (url) {
     return new Promise(function (resolve, reject) { 
       const httpRequest = new XMLHttpRequest() 
@@ -18,7 +17,6 @@ function ajax (url) {
       httpRequest.send() 
     })
   }
-=======
 function ajax (url) {
     return new Promise(function (resolve, reject) { 
       const httpRequest = new XMLHttpRequest() 
@@ -38,5 +36,4 @@ function ajax (url) {
       httpRequest.send() 
     })
   }
->>>>>>> 380e9f8435507e490dcb3c383623ce2653b967ab
   

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ajax('http://localhost:3000/api/teddies').then(function(data){
   console.log(data)
   // data.forEach(TeddyDiv => buildTeddyDiv(TeddyDiv));
@@ -34,7 +33,6 @@ const buildTeddyDiv = (TeddyDiv,container) => {
 
 
 
-=======
 ajax('http://localhost:3000/api/teddies').then(function(data){
   console.log(data)
   // data.forEach(TeddyDiv => buildTeddyDiv(TeddyDiv));
@@ -70,4 +68,3 @@ const buildTeddyDiv = (TeddyDiv,container) => {
 
 
 
->>>>>>> 380e9f8435507e490dcb3c383623ce2653b967ab
