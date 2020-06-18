@@ -1,6 +1,5 @@
 ajax('http://localhost:3000/api/teddies').then(function(data){
   console.log(data)
-  // data.forEach(TeddyDiv => buildTeddyDiv(TeddyDiv));
   const container = document.getElementById('products')
   for(let teddyInfo of data){
   buildTeddyDiv(teddyInfo,container);
@@ -25,6 +24,6 @@ const buildTeddyDiv = (TeddyDiv,container) => {
   a.innerHTML = TeddyDiv.name;
   a.setAttribute("href", "produit.html?id=" + TeddyDiv._id);
   img.setAttribute("src", TeddyDiv.imageUrl);
-  h4.innerHTML = TeddyDiv.price;
+  h4.innerHTML = TeddyDiv.price + " €";
   div.setAttribute("class", "card");
 };

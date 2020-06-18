@@ -6,7 +6,8 @@
 #page {
     width: 100%;
     margin: auto;
-    background-color: #f3e9f1;
+    background: rgb(243,233,241);
+    background: linear-gradient(180deg, rgba(243,233,241,1) 30%, rgba(255,255,255,1) 100%);
 }  
 
 
@@ -61,11 +62,27 @@ header{
 
 #products img {
     width: 80%;
-    height: auto;
+    height: 80%;
     border: outset grey 3px ;
     border-radius: 16px;
     
-  }
+}
+
+#singleproduct{
+    justify-content: space-around;
+}
+
+.productcard{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#singleproduct img{
+    width: 80%;
+    height: auto;
+}
 
 h3{
     text-align: center;
@@ -75,5 +92,4 @@ h3{
 
 h4{
     font-size: 1.2vw;
-    margin-top: 5%;
 }
