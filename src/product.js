@@ -13,9 +13,9 @@ const container = document.getElementById('singleproduct')
 const buildProductDiv = (ProductDiv,container) => {
     // Créer des éléments nécessaires pour construire une carte du produit
     const div = document.createElement("div");
+    const h2 = document.createElement("h2");
     const h3 = document.createElement("h3");
     const h4 = document.createElement("h4");
-    const a = document.createElement("a");
     const img = document.createElement("img");
     const p = document.createElement("p");
     const colors = document.createElement("select")
@@ -34,26 +34,35 @@ const buildProductDiv = (ProductDiv,container) => {
   
     // Ajouter les éléments nouvellement créés dans le DOM
     container.append(div);
-    h3.append(a);
-    div.append(h3);
+    div.append(h2);
     div.append(img);
-    div.append(h4);
+    div.append(h3);
     div.append(p);
+    div.append(h4)
     div.append(colors);
     div.append(quantity);
     div.append(button);
     // Définir le contenu et les attributs
-    a.innerHTML = ProductDiv.name;
-    a.setAttribute("href", "index.html");
+    h2.innerHTML = ProductDiv.name;
     img.setAttribute("src", ProductDiv.imageUrl);
-    h4.innerHTML = ProductDiv.price;
+    h3.innerHTML = ProductDiv.price;
     div.setAttribute("class", "productcard");
     p.innerHTML = ProductDiv.description
+    h4.innerHTML = "Couleurs :"
     button.innerHTML = "Ajouter au panier"
     button.addEventListener("click", function(){
       console.log("bouton cliqué");
       if (!quantity.checkValidity()){
         alert("Erreur , veuillez ne rentrer que des chiffres")
-      }  
+      }
+      const order = { // création d'une constante "order" quand on clique sur le boutton
+      _id: id.innerText, // qui contient l'id du produit
+      colors: colors.value, // la couleur qu'on a choisi 
+      quantity: quantity.value // et la quantité voulue
+    }
+    const stringOrder = JSON.stringify(order) // On transforme l'objet en chaîne de caractère
+    sessionStorage.setItem('newOrder', stringOrder) // On le stocke ensuite dans le storage local et on le nomme "newOrder"  
     })
   };
+
+

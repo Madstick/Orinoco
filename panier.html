@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Votre panier sur Orinoco site e-commerce de vente en ligne de peluches</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="img/favico-logo.png"> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="d-flex flex-vertical" id="page">
+        <header class="d-flex flex-horizontal justify-content-space-between">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo-orinoco.jpg" alt="logo Orinoco site e-commerce">
+                </a>
+            </div>    
+
+            <div class="shopping-cart">
+                <a href="panier.html">
+                    <h2>Votre panier</h2>
+                </a>  
+            </div>      
+        </header>
+        <section>
+            <h1 class="d-flex justify-content-center">Votre panier</h1>
+            <div id="shoppingcart" class="d-flex">
+            </div>
+            <form id="form">
+                <label for="firstname"></label>
+                <input type="text" name="firstname" id="firstname" placeholder="Prénom" required maxlength="25"
+                    pattern="[^0-9]*">
+                <br>
+                <label for="lastname"></label>
+                <input type="text" name="lastname" id="lastname" placeholder="Nom" required maxlength="25"
+                    pattern="[^0-9]*">
+                <br>
+                <label for="address"></label>
+                <textarea name="address" id="address" cols="25" rows="5" placeholder="Adresse" required
+                    maxlength="300"></textarea>
+                <br>
+                <label for="city"></label>
+                <input type="text" name="city" id="city" placeholder="Ville" required maxlength="50"
+                    pattern="[^0-9]*">
+                <br>
+                <label for="email"></label>
+                <input type="email" name="email" id="email" placeholder="Email" maxlength="50" required>
+                <br>
+            </form>
+            <button type="button" id="submit">Envoyer</button>
+
+        </section>
+    </div>   
+
+<script src="src/ajax.js" async defer></script>
+<script src="src/shoppingcart.js" async defer></script>
+
+    </body>
+
+</html>
