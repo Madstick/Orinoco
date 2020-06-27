@@ -50,19 +50,32 @@ const buildProductDiv = (ProductDiv,container) => {
     p.innerHTML = ProductDiv.description
     h4.innerHTML = "Couleurs :"
     button.innerHTML = "Ajouter au panier"
-    button.addEventListener("click", function(){
+    button.setAttribute("data-product", JSON.stringify(ProductDiv))
+
+    button.addEventListener("click", function(carttable){
       console.log("bouton cliqué");
       if (!quantity.checkValidity()){
         alert("Erreur , veuillez ne rentrer que des chiffres")
       }
-      const order = { // création d'une constante "order" quand on clique sur le boutton
-      _id: id.innerText, // qui contient l'id du produit
-      colors: colors.value, // la couleur qu'on a choisi 
-      quantity: quantity.value // et la quantité voulue
+    const product = JSON.parse(carttable.target.getAttribute("data-product"))
+    console.log(product);
+    
+    const order = { // création d'une constante "order" quand on clique sur le boutton
+    _id: id.innerText, // qui contient l'id du produit
+    colors: colors.value, // la couleur qu'on a choisi 
+    quantity: quantity.value, // et la quantité voulue
+    name: product.name, // le nom
+    price: product.price, // ainsi que le prix
     }
+
+    cart.push(order)
+    localStorage.setItem("cart",JSON.stringify(cart))
+
     const stringOrder = JSON.stringify(order) // On transforme l'objet en chaîne de caractère
-    sessionStorage.setItem('newOrder', stringOrder) // On le stocke ensuite dans le storage local et on le nomme "newOrder"  
+    sessionStorage.setItem("newOrder", stringOrder) // On le stocke ensuite dans le storage local et on le nomme "newOrder"  
     })
+    
   };
+
 
 

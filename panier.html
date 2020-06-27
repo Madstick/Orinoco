@@ -20,36 +20,52 @@
                 </a>
             </div>    
 
-            <div class="shopping-cart">
+            <div>
                 <a href="panier.html">
-                    <h2>Votre panier</h2>
+                    <p id="cartlink">Votre panier</p>
                 </a>  
             </div>      
         </header>
-        <section>
-            <h1 class="d-flex justify-content-center">Votre panier</h1>
-            <div id="shoppingcart" class="d-flex">
-            </div>
-            <form id="form">
+        <h1 class="d-flex justify-content-center">Orinoco</h1>
+        <section class="d-flex justify-content-center align-items-center flex-vertical">
+            <h2 class="d-flex justify-content-center">Votre panier</h2>
+            <div class="tablediv">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Article</th>
+                        <th>Couleur</th>
+                        <th>Prix</th>
+                        <th>Quantité</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="carttable">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total du panier :</th>
+                        <th id="carttotal"> 0 €</th>
+                    </tr>
+                </tfoot>
+            </table>
+            <a href="index.html">Continuer mes achats</a>
+            <button id="empty">Vider mon panier</button>
+            <p>
+            </div>    
+                Pour valider votre commande veuillez remplir le formulaire :
+            </p>
+            <form id="form" class="d-flex justify-content-space-between flex-vertical">
                 <label for="firstname"></label>
-                <input type="text" name="firstname" id="firstname" placeholder="Prénom" required maxlength="25"
-                    pattern="[^0-9]*">
-                <br>
+                <input type="text" name="firstname" id="firstname" placeholder="Prénom" required maxlength="25" pattern="[^0-9]*">
                 <label for="lastname"></label>
-                <input type="text" name="lastname" id="lastname" placeholder="Nom" required maxlength="25"
-                    pattern="[^0-9]*">
-                <br>
+                <input type="text" name="lastname" id="lastname" placeholder="Nom" required maxlength="25" pattern="[^0-9]*">
                 <label for="address"></label>
-                <textarea name="address" id="address" cols="25" rows="5" placeholder="Adresse" required
-                    maxlength="300"></textarea>
-                <br>
+                <input name="address" id="address" placeholder="Adresse" required maxlength="200">
                 <label for="city"></label>
-                <input type="text" name="city" id="city" placeholder="Ville" required maxlength="50"
-                    pattern="[^0-9]*">
-                <br>
+                <input type="text" name="city" id="city" placeholder="Ville" required maxlength="50" pattern="[^0-9]*">
                 <label for="email"></label>
                 <input type="email" name="email" id="email" placeholder="Email" maxlength="50" required>
-                <br>
             </form>
             <button type="button" id="submit">Envoyer</button>
 
@@ -57,6 +73,8 @@
     </div>   
 
 <script src="src/ajax.js" async defer></script>
+<script src="src/ajaxpost.js" async defer></script>
+<script src="src/getcart.js" async defer></script>
 <script src="src/shoppingcart.js" async defer></script>
 
     </body>

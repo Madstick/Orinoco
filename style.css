@@ -10,8 +10,6 @@
     background: linear-gradient(180deg, rgba(243,233,241,1) 30%, rgba(255,255,255,1) 100%);
 }  
 
-
-
 /* attributs flex */
 
 .d-flex{
@@ -92,4 +90,25 @@ h3{
 
 h4{
     font-size: 1.2vw;
+}
+
+
+#form{
+    width: 30%;
+}
+
+#form input{
+    width: 100%;
+}
+
+.tablediv{
+  width: 65%;  
+}
+
+#table th{
+    width: 10%;
+}
+
+tr{
+    padding: 0% 15%;
 }
