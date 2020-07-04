@@ -14,22 +14,25 @@
 
     <div class="d-flex flex-vertical" id="page">
         <header class="d-flex flex-horizontal justify-content-space-between">
-            <div class="logo">
+            <div id="logo">
                 <a href="index.html">
                     <img src="img/logo-orinoco.jpg" alt="logo Orinoco site e-commerce">
                 </a>
             </div>    
 
-            <div>
+            <div id="nav">
+                <a href="index.html">
+                    <p id="indexlink">Accueil</p>
+                </a>  
                 <a href="panier.html">
                     <p id="cartlink">Votre panier</p>
                 </a>  
-            </div>      
+            </div>       
         </header>
         <h1 class="d-flex justify-content-center">Orinoco</h1>
         <section class="d-flex justify-content-center align-items-center flex-vertical">
             <h2 class="d-flex justify-content-center">Votre panier</h2>
-            <div class="tablediv">
+            <div id="tablediv">
             <table id="table">
                 <thead>
                     <tr>
@@ -44,6 +47,13 @@
                 </tbody>
                 <tfoot>
                     <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
                         <th>Total du panier :</th>
                         <th id="carttotal"> 0 €</th>
                     </tr>
@@ -51,31 +61,35 @@
             </table>
             <a href="index.html">Continuer mes achats</a>
             <button id="empty">Vider mon panier</button>
-            <p>
-            </div>    
+            </div>  
+            <p id="formp">  
                 Pour valider votre commande veuillez remplir le formulaire :
             </p>
-            <form id="form" class="d-flex justify-content-space-between flex-vertical">
-                <label for="firstname"></label>
-                <input type="text" name="firstname" id="firstname" placeholder="Prénom" required maxlength="25" pattern="[^0-9]*">
-                <label for="lastname"></label>
-                <input type="text" name="lastname" id="lastname" placeholder="Nom" required maxlength="25" pattern="[^0-9]*">
-                <label for="address"></label>
-                <input name="address" id="address" placeholder="Adresse" required maxlength="200">
-                <label for="city"></label>
-                <input type="text" name="city" id="city" placeholder="Ville" required maxlength="50" pattern="[^0-9]*">
-                <label for="email"></label>
-                <input type="email" name="email" id="email" placeholder="Email" maxlength="50" required>
+            <form id="form" class="d-flex justify-content-space-between flex-vertical" action="confirmation.html" name="myForm" onsubmit="return validateForm()" method="POST">
+                <label for="firstname">Prénom</label>
+                <input type="text" name="firstname" id="firstname" placeholder="Votre prénom" required maxlength="25" pattern="[^0-9]*">
+                <label for="lastname">Nom</label>
+                <input type="text" name="lastname" id="lastname" placeholder="Votre nom" required maxlength="25" pattern="[^0-9]*">
+                <label for="address">Adresse</label>
+                <input name="address" id="address" placeholder="Votre adresse" required maxlength="120">
+                <label for="city">Ville</label>
+                <input type="text" name="city" id="city" placeholder="Votre ville" required maxlength="50" pattern="[^0-9]*">
+                <label for="date">Date de naissance</label>
+                <input type="date" id="date" name="date" placeholder="Date de naissance">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="Votre e-mail" maxlength="50" required>
+                <input type="submit" id="submit" value="Envoyer">
             </form>
-            <button type="button" id="submit">Envoyer</button>
+
 
         </section>
     </div>   
 
-<script src="src/ajax.js" async defer></script>
-<script src="src/ajaxpost.js" async defer></script>
-<script src="src/getcart.js" async defer></script>
-<script src="src/shoppingcart.js" async defer></script>
+<script src="src/ajax.js" ></script>
+<script src="src/validateForm.js" ></script>
+<script src="src/ajaxpost.js" ></script>
+<script src="src/getcart.js" ></script>
+<script src="src/shoppingcart.js" ></script>
 
     </body>
 

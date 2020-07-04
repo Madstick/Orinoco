@@ -1,4 +1,4 @@
-function ajax (url, sending) {
+function ajaxpost (url, send) {
     return new Promise(function (resolve, reject) { 
       const httpRequest = new XMLHttpRequest() 
       httpRequest.onreadystatechange = function () {
@@ -15,7 +15,7 @@ function ajax (url, sending) {
       }
       httpRequest.open('POST', url, true) 
       httpRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-      httpRequest.send(JSON.stringify(sending)) 
+      httpRequest.send(JSON.stringify(send)) 
     })
   }
   

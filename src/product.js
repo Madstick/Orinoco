@@ -18,6 +18,7 @@ const buildProductDiv = (ProductDiv,container) => {
     const h4 = document.createElement("h4");
     const img = document.createElement("img");
     const p = document.createElement("p");
+
     const colors = document.createElement("select")
     for (color of ProductDiv.colors){
       var option = document.createElement("option")
@@ -25,6 +26,7 @@ const buildProductDiv = (ProductDiv,container) => {
       option.innerHTML = color
       colors.append(option)
     }
+
     const button = document.createElement("button")
     const quantity = document.createElement("input")
     quantity.type = "number"
@@ -45,10 +47,10 @@ const buildProductDiv = (ProductDiv,container) => {
     // Définir le contenu et les attributs
     h2.innerHTML = ProductDiv.name;
     img.setAttribute("src", ProductDiv.imageUrl);
-    h3.innerHTML = ProductDiv.price;
+    h3.innerHTML = ProductDiv.price + " €";
     div.setAttribute("class", "productcard");
     p.innerHTML = ProductDiv.description
-    h4.innerHTML = "Couleurs :"
+    h4.innerHTML = "Couleurs"
     button.innerHTML = "Ajouter au panier"
     button.setAttribute("data-product", JSON.stringify(ProductDiv))
 
@@ -71,9 +73,9 @@ const buildProductDiv = (ProductDiv,container) => {
     cart.push(order)
     localStorage.setItem("cart",JSON.stringify(cart))
 
-    const stringOrder = JSON.stringify(order) // On transforme l'objet en chaîne de caractère
-    sessionStorage.setItem("newOrder", stringOrder) // On le stocke ensuite dans le storage local et on le nomme "newOrder"  
-    })
+    if (confirm("Voulez vous voir votre panier?")){
+      window.location.href = "panier.html"
+    }})
     
   };
 

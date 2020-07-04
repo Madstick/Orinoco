@@ -41,6 +41,23 @@ header{
     margin: 2% 10%;
 }
 
+#nav{
+    width: 30%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo{
+   width: 292px; 
+   height: 71px;
+}
+
+h1{
+    font-size: 3em;
+    margin: 15px 0px;
+}
+
 #products{
     margin: 5% 10%;
     flex-wrap: wrap;
@@ -63,7 +80,6 @@ header{
     height: 80%;
     border: outset grey 3px ;
     border-radius: 16px;
-    
 }
 
 #singleproduct{
@@ -77,38 +93,140 @@ header{
     align-items: center;
 }
 
+.productcard button,.productcard input{
+    margin-top: 12px;
+}
+
+.productcard button{
+    margin-bottom: 12px;
+}
+
 #singleproduct img{
     width: 80%;
     height: auto;
 }
 
-h3{
+.productcard h2{
+    font-size: 2em;
+}
+
+.productcard h3{
     text-align: center;
     padding-bottom: 5%;
-    font-size: 1.5vw;
+    font-size: 1.5em;
 }
 
-h4{
-    font-size: 1.2vw;
+.productcard h4{
+    font-size: 1.2em;
 }
 
+/* Panier,Formulaire */    
+
+#table{
+    margin-top: 5%;
+    width: 100%;
+    background-color: white;
+}
+
+#table,#table th, #table td, #table tfoot td{
+    border: 2px solid #e4e4eb;
+    border-collapse: collapse;
+}
+
+#table th, #table td,#table tfoot td{
+    background-color: #f0f0f5;
+}
+
+#table td{
+    text-align: center;
+}
+
+#table th:nth-last-child(n+1){
+    border: none;
+    background-color: white;
+}
+
+#tablediv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 65%;  
+}
 
 #form{
-    width: 30%;
+    width: 400px;
+    display: flex;
+    align-items: center;
 }
 
 #form input{
     width: 100%;
+    padding: 10px;
 }
 
-.tablediv{
-  width: 65%;  
+#form label{
+    margin-top: 10px;
+    text-align: center;
 }
 
-#table th{
-    width: 10%;
+#table th:nth-child(1){
+    width: 25%;
 }
 
-tr{
-    padding: 0% 15%;
+#table th:nth-child(2){
+    width: 20%;
+}
+
+#table th:nth-child(n+3){
+    width: 15%;
+}
+
+#table tr{
+    height: 3em;
+}
+
+#tablediv a,#empty,#formp,#submit{
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+#submit{
+    width: 20%;
+    margin-bottom: 20px;
+}
+
+button,#cartlink,.productbutton,#indexlink,#tablediv a,#submit{
+    display:inline-block;
+    padding:0.46em 1.6em;
+    border:0.1em solid #525252;
+    border-radius:0.50em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color: #525252;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    background-color:#eddeec;
+    text-align:center;
+    transition: all 0.15s;
+}
+
+button:hover,#cartlink:hover,.productbutton:hover,#indexlink:hover,#tablediv a:hover,#submit:hover{
+    text-shadow: 0 0 2em rgba(255,255,255,1);
+    color:black;
+    border-color:black;
+}
+
+button:active,#cartlink:active,#productbutton:active,#indexlink:active,#tablediv a:active,#submit:active{
+    background-color: #3e8e41;
+    transform: translate(-1px,3px);
+    transition: all 0.05s;
+  }
+
+.productbutton:active{
+    background-color: black;
+}   
+
+#cartlink,#indexlink{
+    margin:0px 12px;
 }
