@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="img/favico-logo.png"> 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="all and (max-width: 996px) and (min-width: 530px)" href="responsive/tablette.css">
+    <link rel="stylesheet" media="all and (max-width: 530px)" href="responsive/telephone.css">  
 </head>
 <body>
 
@@ -46,7 +48,7 @@
                 <tbody id="carttable">
                 </tbody>
                 <tfoot>
-                    <tr>
+                    <tr id="emptytr">
                         <td></td>
                         <td></td>
                         <td></td>
@@ -65,7 +67,9 @@
             <p id="formp">  
                 Pour valider votre commande veuillez remplir le formulaire :
             </p>
-            <form id="form" class="d-flex justify-content-space-between flex-vertical" action="confirmation.html" name="myForm" onsubmit="return validateForm()" method="POST">
+            <div id="errorMsg">
+            </div>
+            <form id="form" class="d-flex justify-content-space-between flex-vertical" name="myForm">
                 <label for="firstname">Prénom</label>
                 <input type="text" name="firstname" id="firstname" placeholder="Votre prénom" required maxlength="25" pattern="[^0-9]*">
                 <label for="lastname">Nom</label>
@@ -86,10 +90,10 @@
     </div>   
 
 <script src="src/ajax.js" ></script>
-<script src="src/validateForm.js" ></script>
-<script src="src/ajaxpost.js" ></script>
 <script src="src/getcart.js" ></script>
 <script src="src/shoppingcart.js" ></script>
+<script src="src/validateForm.js" ></script>
+<script src="src/ajaxpost.js" ></script>
 
     </body>
 

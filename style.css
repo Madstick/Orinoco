@@ -39,10 +39,11 @@
 
 header{
     margin: 2% 10%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid grey;
 }
 
 #nav{
-    width: 30%;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -55,8 +56,11 @@ header{
 
 h1{
     font-size: 3em;
-    margin: 15px 0px;
+    margin: 70px 0px;
+    text-align: center;
 }
+
+/* Page des produits */
 
 #products{
     margin: 5% 10%;
@@ -81,6 +85,8 @@ h1{
     border: outset grey 3px ;
     border-radius: 16px;
 }
+
+/* Page de produit spécifique */
 
 #singleproduct{
     justify-content: space-around;
@@ -112,12 +118,13 @@ h1{
 
 .productcard h3{
     text-align: center;
-    padding-bottom: 5%;
+    padding-bottom: 2%;
     font-size: 1.5em;
 }
 
 .productcard h4{
     font-size: 1.2em;
+    padding-top: 2%;
 }
 
 /* Panier,Formulaire */    
@@ -128,9 +135,13 @@ h1{
     background-color: white;
 }
 
-#table,#table th, #table td, #table tfoot td{
+#table,#table th, #table td,#table tfoot td{
     border: 2px solid #e4e4eb;
     border-collapse: collapse;
+}
+
+#emptytr {
+    /* display: none; */
 }
 
 #table th, #table td,#table tfoot td{
@@ -190,6 +201,10 @@ h1{
     font-size: 16px;
 }
 
+#formp{
+    text-align: center;
+}
+
 #submit{
     width: 20%;
     margin-bottom: 20px;
@@ -197,7 +212,7 @@ h1{
 
 button,#cartlink,.productbutton,#indexlink,#tablediv a,#submit{
     display:inline-block;
-    padding:0.46em 1.6em;
+    padding:0.6em 1.6em;
     border:0.1em solid #525252;
     border-radius:0.50em;
     box-sizing: border-box;
@@ -230,3 +245,28 @@ button:active,#cartlink:active,#productbutton:active,#indexlink:active,#tablediv
 #cartlink,#indexlink{
     margin:0px 12px;
 }
+
+/* Messages d'erreur */
+
+.errorDiv{
+    margin: 10% 10%;
+    padding: 2%;
+    font-size: 2em;
+    display: flex;
+    text-align: center;
+    color: #a8271e;
+    border: red 5px solid;
+    background-color: pink;
+}
+
+.carterrorDiv{
+    margin: 1% 20%;
+    padding: 2%;
+    font-size: 1.2em;
+    display: flex;
+    text-align: center;
+    color: #a8271e;
+    border: red 5px solid;
+    background-color: pink;
+
+}    

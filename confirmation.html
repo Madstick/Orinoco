@@ -4,11 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Votre panier sur Orinoco site e-commerce de vente en ligne de peluches</title>
+    <title>Votre commande sur Orinoco site e-commerce de vente en ligne de peluches</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="img/favico-logo.png"> 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="all and (max-width: 996px) and (min-width: 530px)" href="responsive/tablette.css">
+    <link rel="stylesheet" media="all and (max-width: 530px)" href="responsive/telephone.css">  
 </head>
 <body>
 
@@ -31,6 +33,19 @@
         </header>
         <h1 class="d-flex justify-content-center">Orinoco</h1>
 
+        <section>
+            <h2>Votre commande</h2>
+            <div>
+                <p>L'équipe Orinoco vous remercie pour votre commande d'un montant de <span id="totalcmd"></span></p>
+                <h3>Votre identifiant de commande</h3>
+                <p><span id="idcmd"></span></p>
+
+            </div>
+            
+        </section>
 
     </div>
+
+    <script src="src/ajax.js" ></script>
+    <script src="src/confirmation.js" ></script>
 </body>    
