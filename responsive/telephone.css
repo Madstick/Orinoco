@@ -1,0 +1,79 @@
+header{
+    margin: 2% 4%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer{
+    justify-content: space-around;
+}
+
+footer a{
+    margin: 40px 0px 20px;
+}
+
+.card{
+    width: 95%;
+}
+
+.card:last-child{
+    margin-bottom: 85px;
+}
+
+#logo img{
+    width: 220px; 
+    height: 60px;
+    padding-bottom: 5px;
+ }
+
+h1{
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+#cartlink,#indexlink{
+    font-size: 16px;
+    margin:0px 4px;
+}
+
+/* Page principale */
+
+#products{
+    margin: 2% 2%;
+}
+
+/* Page produit */
+
+.productcard{
+    width: 100%;
+}
+
+.producth1{
+    margin-top: 40px;
+}
+
+.productcard p{
+    text-align: center;
+}
+
+.productcard:last-child{
+    margin-bottom: 85px;
+}
+
+#singleproduct img{
+    width: 92%;
+}
+
+.productcard select, .productcard input{
+    width: 15em;
+}
+
+/* Panier */
+
+#tablediv{
+    width: 98%;
+}
+
+#form{
+    width: 250px;
+}

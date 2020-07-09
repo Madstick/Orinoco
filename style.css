@@ -32,15 +32,13 @@
     justify-content: center;
 }
  
-.justify-content-space-between{
-    justify-content: space-between;
-}
 /* mise en page */
 
 header{
     margin: 2% 10%;
     padding-bottom: 20px;
     border-bottom: 1px solid grey;
+    justify-content: space-between;
 }
 
 #nav{
@@ -49,34 +47,75 @@ header{
     align-items: center;
 }
 
-#logo{
+#logo img{
    width: 292px; 
    height: 71px;
 }
 
 h1{
     font-size: 3em;
-    margin: 70px 0px;
+    margin: 40px 0px;
     text-align: center;
+}
+
+
+h2{
+    margin: 10px 0px 20px;
+}
+
+
+footer{
+    justify-content: flex-end;
+    background: rgb(243,233,241);
+    background: linear-gradient(360deg, rgba(243,233,241,0.85) 70%, rgba(255,255,255,0) 100%);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer a{
+    display: block;
+    margin: 40px 30px 20px;
+    font-size: 1.3em;
+    font-family:'Roboto',sans-serif;
+    font-weight:500;
+    text-decoration:none;
+    color: #997499 ;
+    
+}
+
+a{
+    outline: 0;
 }
 
 /* Page des produits */
 
 #products{
-    margin: 5% 10%;
+    margin: 2% 10%;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
 .card{
     width: 40%;
+    height: 100%;
     margin: 5% 0%;
     padding: 2% 0%;
     box-shadow: 10px 10px 5px 0px rgba(238, 238, 238, 1);
     background-color:#f7edf6 ;
+    border-radius: 0.75em;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#products h2{
+    font-size: 2.2em;
+}
+
+#products h3{
+    font-size: 1.4em;
 }
 
 #products img {
@@ -84,7 +123,13 @@ h1{
     height: 80%;
     border: outset grey 3px ;
     border-radius: 16px;
+    transition: all 0.2s ease-in-out
 }
+
+#products img:hover {
+    transform: scale(1.02);
+    opacity: 0.7;
+  }
 
 /* Page de produit spécifique */
 
@@ -110,21 +155,40 @@ h1{
 #singleproduct img{
     width: 80%;
     height: auto;
+    border: 4px solid #e4e4eb ;
+    border-radius: 0.5em;
 }
 
 .productcard h2{
-    font-size: 2em;
+    font-size: 2.7em;
 }
 
 .productcard h3{
-    text-align: center;
-    padding-bottom: 2%;
-    font-size: 1.5em;
+    text-align: justify;
+    padding: 1% 0% 2%;
+    font-size: 1.8em;
 }
 
 .productcard h4{
-    font-size: 1.2em;
-    padding-top: 2%;
+    font-size: 1.8em;
+    margin: 1% 0% 0%;
+}
+
+.productcard p{
+    font-size: 1.5em;
+    text-align: center;
+    padding-bottom: 20px;
+    margin: 0% 4%;
+}
+
+.productcard:last-child{
+    margin-bottom: 85px;
+}
+
+.productcard select, .productcard input{
+    font-size: 1em;
+    margin: 0.5% 0% 1%;
+    width: 20em;
 }
 
 /* Panier,Formulaire */    
@@ -138,10 +202,6 @@ h1{
 #table,#table th, #table td,#table tfoot td{
     border: 2px solid #e4e4eb;
     border-collapse: collapse;
-}
-
-#emptytr {
-    /* display: none; */
 }
 
 #table th, #table td,#table tfoot td{
@@ -161,7 +221,7 @@ h1{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 65%;  
+    width: 75%;  
 }
 
 #form{
@@ -178,6 +238,10 @@ h1{
 #form label{
     margin-top: 10px;
     text-align: center;
+}
+
+#form:last-child{
+    margin-bottom: 85px;
 }
 
 #table th:nth-child(1){
@@ -218,7 +282,7 @@ button,#cartlink,.productbutton,#indexlink,#tablediv a,#submit{
     box-sizing: border-box;
     text-decoration:none;
     font-family:'Roboto',sans-serif;
-    font-weight:300;
+    font-weight:500;
     color: #525252;
     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
     background-color:#eddeec;
@@ -232,18 +296,15 @@ button:hover,#cartlink:hover,.productbutton:hover,#indexlink:hover,#tablediv a:h
     border-color:black;
 }
 
-button:active,#cartlink:active,#productbutton:active,#indexlink:active,#tablediv a:active,#submit:active{
-    background-color: #3e8e41;
+button:active,#cartlink:active,.productbutton:active,#indexlink:active,#tablediv a:active,#submit:active{
+    background-color: #c9b3c8;
     transform: translate(-1px,3px);
     transition: all 0.05s;
-  }
-
-.productbutton:active{
-    background-color: black;
-}   
+}
 
 #cartlink,#indexlink{
     margin:0px 12px;
+    font-size: 20px;
 }
 
 /* Messages d'erreur */

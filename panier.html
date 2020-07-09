@@ -15,7 +15,7 @@
 <body>
 
     <div class="d-flex flex-vertical" id="page">
-        <header class="d-flex flex-horizontal justify-content-space-between">
+        <header class="d-flex">
             <div id="logo">
                 <a href="index.html">
                     <img src="img/logo-orinoco.jpg" alt="logo Orinoco site e-commerce">
@@ -48,13 +48,6 @@
                 <tbody id="carttable">
                 </tbody>
                 <tfoot>
-                    <tr id="emptytr">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
                     <tr>
                         <th>Total du panier :</th>
                         <th id="carttotal"> 0 €</th>
@@ -84,9 +77,12 @@
                 <input type="email" name="email" id="email" placeholder="Votre e-mail" maxlength="50" required>
                 <input type="submit" id="submit" value="Envoyer">
             </form>
-
-
         </section>
+
+        <footer class="d-flex flex-horizontal">
+            <a href="https://www.youtube.com/watch?v=LTrk4X9ACtw">À propos</a>
+            <a href="mailto:orinoco@gmail.com">Contact</a>
+        </footer>
     </div>   
 
 <script src="src/ajax.js" ></script>

@@ -1,7 +1,7 @@
 const container = document.getElementById("products")
 
-ajax('http://localhost:3000/api/teddies').then(function(data){ // On 
-  console.log(data)
+ajax("http://localhost:3000/api/teddies").then(function(data){ // On fait la requête ajax
+  // console.log(data)
   for(let teddyInfo of data){
   buildTeddyDiv(teddyInfo,container);
  } 
@@ -13,7 +13,7 @@ ajax('http://localhost:3000/api/teddies').then(function(data){ // On
 });
 
 const buildTeddyDiv = (TeddyDiv,container) => {
-  // Créer des éléments nécessaires pour construire une carte des produit
+  // Créer des éléments nécessaires pour construire une carte des produits
   const div = document.createElement("div");
   const h2 = document.createElement("h2");
   const h3 = document.createElement("h3");
@@ -35,5 +35,5 @@ const buildTeddyDiv = (TeddyDiv,container) => {
   a.setAttribute("class", "productbutton");
   img.setAttribute("src", TeddyDiv.imageUrl);
   img.setAttribute("alt", "Image d'un teddy");
-  h3.innerHTML = TeddyDiv.price + " €";
+  h3.innerHTML = "Prix: " + TeddyDiv.price + " €";
 };

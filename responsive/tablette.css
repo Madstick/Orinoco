@@ -1,0 +1,64 @@
+header{
+    margin: 2% 4%;
+}
+
+footer{
+    margin-top: 50px;
+    justify-content: space-around;
+    font-size: 21px;
+}
+
+#logo img{
+    width: 180px; 
+    height: 52px;
+ }
+
+h1{
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+#cartlink,#indexlink{
+    font-size: 17px;
+    margin:0px 8px;
+}
+
+/* Page principale */
+
+#products{
+    margin: 2% 5%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card{
+    width: 90%;
+}
+
+.card:last-child{
+    margin-bottom: 100px;
+}
+
+/* Page produit */
+
+.productcard{
+    width: 100%;
+}
+
+.productcard p{
+    text-align: center;
+}
+
+.productcard:last-child{
+    margin-bottom: 85px;
+}
+
+#singleproduct img{
+    width: 92%;
+}
+
+/* Panier */
+
+#tablediv{
+    width: 95%;
+}

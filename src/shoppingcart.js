@@ -43,10 +43,9 @@ let total = 0
 
 carttotal.innerHTML = total + " €"
 
-
-    emptyButton.addEventListener("click", function () {
-        localStorage.setItem("cart","[]");
-        window.location.reload()
+emptyButton.addEventListener("click", function () {
+    localStorage.setItem("cart","[]");
+    window.location.reload()
 })
 
 // Fonction de récupération et de soumission du formulaire
@@ -70,9 +69,9 @@ submit.addEventListener("click", function(event){
             email: email.value
         }
 
-        var cartstring = [] // Création d'une variable cartstring qui est un array
-        for (line of cart){
-            cartstring.push(line.id)
+        var cartstring = [] // Création d'une variable cartstring qui est un array vide
+        for (line of cart){ // Pour chaque "line" de "cart"
+            cartstring.push(line.id) // On rajoute une entrée d'id dans l'array
         }
 
         const orderdata = {"contact":contact,"products":cartstring}

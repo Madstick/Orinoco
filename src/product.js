@@ -1,14 +1,12 @@
 const container = document.getElementById("singleproduct")
 
-
-
 const urlParams = new URLSearchParams(window.location.search); // Création d'une fonction qui va récupérer l'id du produit
 const id = urlParams.get("id");
-console.log(id);
+// console.log(id);
 
-ajax('http://localhost:3000/api/teddies/' + id ) // Requête ajax qui va prendre en compte l'id du produit
+ajax("http://localhost:3000/api/teddies/" + id ) // Requête ajax qui va prendre en compte l'id du produit
   .then(function(data){
-    console.log(data) 
+    // console.log(data) 
     buildProductDiv(data,container);
 })
   .catch(error =>{
@@ -19,7 +17,6 @@ ajax('http://localhost:3000/api/teddies/' + id ) // Requête ajax qui va prendre
 });
 
 
-
 const buildProductDiv = (ProductDiv,container) => {
 
     // Créer des éléments nécessaires pour construire une carte du produit
@@ -27,6 +24,7 @@ const buildProductDiv = (ProductDiv,container) => {
     const h2 = document.createElement("h2");
     const h3 = document.createElement("h3");
     const h4 = document.createElement("h4");
+    const h4b = document.createElement("h4");
     const img = document.createElement("img");
     const p = document.createElement("p");
 
@@ -53,6 +51,7 @@ const buildProductDiv = (ProductDiv,container) => {
     div.append(p);
     div.append(h4)
     div.append(colors);
+    div.append(h4b)
     div.append(quantity);
     div.append(button);
 
@@ -60,20 +59,21 @@ const buildProductDiv = (ProductDiv,container) => {
     h2.innerHTML = ProductDiv.name;
     img.setAttribute("src", ProductDiv.imageUrl);
     img.setAttribute("alt", "Image d'un teddy");
-    h3.innerHTML = ProductDiv.price + " €";
+    h3.innerHTML = "Prix: " + ProductDiv.price + " €";
     div.setAttribute("class", "productcard");
     p.innerHTML = ProductDiv.description
     h4.innerHTML = "Couleurs"
+    h4b.innerHTML = "Quantité"
     button.innerHTML = "Ajouter au panier"
-    button.setAttribute("data-product", JSON.stringify(ProductDiv)) // On crée un attribut "data-product" sur le bouton qui envoie les données de productdiv au serveur
+    button.setAttribute("data-product", JSON.stringify(ProductDiv)) // On crée un attribut "data-product" sur le bouton qui stringify les données de productdiv
 
-    button.addEventListener("click", function(carttable){ // Création d'un eventlistener sur le bouton
+    button.addEventListener("click", function(btnclick){ // Création d'un eventlistener sur le bouton quand on le clique, la fonction se lance
       console.log("bouton cliqué");
       if (!quantity.checkValidity()){ // Si la quantité n'est pas composée que de chiffres..
         alert("Erreur , veuillez ne rentrer que des chiffres") // On afiche un message d'erreur
       }
       
-    const product = JSON.parse(carttable.target.getAttribute("data-product"))
+    const product = JSON.parse(btnclick.target.getAttribute("data-product")) // On crée une constante "product" qui va parser
     console.log(product);
     
     const order = { // création d'une constante "order" quand on clique sur le boutton
@@ -84,7 +84,7 @@ const buildProductDiv = (ProductDiv,container) => {
     price: product.price, // ainsi que le prix
     }
 
-    cart.push(order) // On transforme la constante order en array avec la fonction "getcart" et on y rajoute ses données créées précédemment
+    cart.push(order) // On rajoute les données de "order" dans l'array "cart" crée avec getcart.js
     localStorage.setItem("cart",JSON.stringify(cart)) // On stocke l'array dans le local storage, et on le convertit en chaîne JSON
 
     if (confirm("Voulez vous voir votre panier?")){ // Quand on clique sur le boutton on à l'option de voir le panier directement
