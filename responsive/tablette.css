@@ -62,3 +62,15 @@ h1{
 #tablediv{
     width: 95%;
 }
+
+/* Page de confirmation */
+
+#confirm{
+    margin: 5% 10%;
+    padding: 2%;
+}
+
+#confirmsection img{
+    width: 70%;
+    height: auto;
+}    

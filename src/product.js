@@ -68,13 +68,13 @@ const buildProductDiv = (ProductDiv,container) => {
     button.setAttribute("data-product", JSON.stringify(ProductDiv)) // On crée un attribut "data-product" sur le bouton qui stringify les données de productdiv
 
     button.addEventListener("click", function(btnclick){ // Création d'un eventlistener sur le bouton quand on le clique, la fonction se lance
-      console.log("bouton cliqué");
+      // console.log("bouton cliqué");
       if (!quantity.checkValidity()){ // Si la quantité n'est pas composée que de chiffres..
         alert("Erreur , veuillez ne rentrer que des chiffres") // On afiche un message d'erreur
       }
       
-    const product = JSON.parse(btnclick.target.getAttribute("data-product")) // On crée une constante "product" qui va parser
-    console.log(product);
+    const product = JSON.parse(btnclick.target.getAttribute("data-product")) // On crée une constante "product" qui est égale au parsage de "data-products"
+    // console.log(product);
     
     const order = { // création d'une constante "order" quand on clique sur le boutton
     id: product._id, // qui contient l'id du produit

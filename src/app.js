@@ -2,8 +2,8 @@ const container = document.getElementById("products")
 
 ajax("http://localhost:3000/api/teddies").then(function(data){ // On fait la requête ajax
   // console.log(data)
-  for(let teddyInfo of data){
-  buildTeddyDiv(teddyInfo,container);
+  for(let teddyInfo of data){ // Pour chaque "teddyinfo" de data
+  buildTeddyDiv(teddyInfo,container); // On crée un "buildTeddyDiv" contenant les données recues par le serveur, et son container
  } 
 }).catch(error =>{
   console.error("Erreur lors de la requête: ", error);

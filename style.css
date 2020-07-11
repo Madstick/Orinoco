@@ -8,6 +8,7 @@
     margin: auto;
     background: rgb(243,233,241);
     background: linear-gradient(180deg, rgba(243,233,241,1) 30%, rgba(255,255,255,1) 100%);
+    font-family:'Roboto',sans-serif;
 }  
 
 /* attributs flex */
@@ -56,11 +57,15 @@ h1{
     font-size: 3em;
     margin: 40px 0px;
     text-align: center;
+    font-family: 'Pacifico', cursive;
 }
 
 
 h2{
-    margin: 10px 0px 20px;
+    font-size: 2.2em;
+    margin: 10px 0px 0px;
+    text-align: center;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 
@@ -78,7 +83,6 @@ footer a{
     display: block;
     margin: 40px 30px 20px;
     font-size: 1.3em;
-    font-family:'Roboto',sans-serif;
     font-weight:500;
     text-decoration:none;
     color: #997499 ;
@@ -92,7 +96,7 @@ a{
 /* Page des produits */
 
 #products{
-    margin: 2% 10%;
+    margin: 0% 10%;
     flex-wrap: wrap;
     justify-content: space-around;
 }
@@ -108,6 +112,10 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.card:last-child{
+    margin-bottom: 105px;
 }
 
 #products h2{
@@ -267,6 +275,8 @@ a{
 
 #formp{
     text-align: center;
+    font-size: 18px;
+    margin: 30px 0px 10px;
 }
 
 #submit{
@@ -281,7 +291,6 @@ button,#cartlink,.productbutton,#indexlink,#tablediv a,#submit{
     border-radius:0.50em;
     box-sizing: border-box;
     text-decoration:none;
-    font-family:'Roboto',sans-serif;
     font-weight:500;
     color: #525252;
     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
@@ -305,6 +314,44 @@ button:active,#cartlink:active,.productbutton:active,#indexlink:active,#tablediv
 #cartlink,#indexlink{
     margin:0px 12px;
     font-size: 20px;
+}
+
+/* Page de confirmation */
+
+#confirm{
+    border: solid 3px rgba(202, 180, 201, 0.6) ;
+    border-radius: 0.75em;
+    background-color: rgba(237, 222, 236, 0.5);
+    margin: 2% 22%;
+    padding: 2%;
+    text-align: center;
+}
+
+#confirm p {
+    padding: 10px;
+    font-size: 20px;
+}
+
+#confirm h3{
+    font-size: 28px;
+    padding-top: 16px;
+}
+
+#confirmsection img{
+    width: 40%;
+    align-self: center;
+    padding-bottom: 60px;
+    border: 5px solid transparent
+}
+
+#namecmd,#idcmd,#totalcmd{
+    font-style: italic;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#idcmd{
+    margin: 5% 0%;
 }
 
 /* Messages d'erreur */
@@ -331,3 +378,4 @@ button:active,#cartlink:active,.productbutton:active,#indexlink:active,#tablediv
     background-color: pink;
 
 }    
+
