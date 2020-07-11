@@ -44,8 +44,8 @@ const buildProductTable = (productTable,container) => { // Création d'une fonct
 let total = 0
     for (let item of cart ){ // pour chaque "item" de "cart"
         console.log(item);
-        buildProductTable(item,container); // On execute buildProducTable
-        total+=item.price*item.quantity;
+        buildProductTable(item,container); // On execute buildProductTable
+        total+=item.price*item.quantity; // Le total étant 0 de base on y rajoute la multiplication quantité*prix
         sessionStorage.setItem("total", total) // On stocke le total sur le sessionstorage
 }
 

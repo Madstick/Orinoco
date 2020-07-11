@@ -1,10 +1,10 @@
 const container = document.getElementById("singleproduct")
 
-const urlParams = new URLSearchParams(window.location.search); // Création d'une fonction qui va récupérer l'id du produit
+const urlParams = new URLSearchParams(window.location.search); // Création d'une constante qui va récupérer l'id du produit
 const id = urlParams.get("id");
 // console.log(id);
 
-ajax("http://localhost:3000/api/teddies/" + id ) // Requête ajax qui va prendre en compte l'id du produit
+ajax("http://localhost:3000/api/teddies/" + id ) // Requête ajax qui va prendre en compte l'id du produit récupéré
   .then(function(data){
     // console.log(data) 
     buildProductDiv(data,container);
@@ -28,20 +28,21 @@ const buildProductDiv = (ProductDiv,container) => {
     const img = document.createElement("img");
     const p = document.createElement("p");
 
-    const colors = document.createElement("select") //
-    for (color of ProductDiv.colors){
-      var option = document.createElement("option")
-      option.value = color
-      option.innerHTML = color
-      colors.append(option)
+    const colors = document.createElement("select") // On crée un select
+    for (color of ProductDiv.colors){ // Pour chaque couleur de productDiv
+      var option = document.createElement("option") // On crée une entrée
+      option.value = color // Qui à la valeur des couleurs
+      option.innerHTML = color // Et affiche les couleurs
+      colors.append(option) // On place ces entrées dans le select
     }
 
     const button = document.createElement("button")
+
     const quantity = document.createElement("input")
-    quantity.type = "number"
-    quantity.value = "1"
-    quantity.pattern="[0-9]+" 
-    quantity.setAttribute("pattern", "[0-9]+")
+    quantity.type = "number"  // Le type de "quantity" est des chiffres/nombres
+    quantity.value = "1" // La valeur de base est 1
+    quantity.pattern="[0-9]+" // On crée un pattern où on ne peut utiliser que des chiffres ( pas de lettres )
+    quantity.setAttribute("pattern", "[0-9]+") // On met l'attribut pattern à quantity
   
     // Ajouter les éléments nouvellement créés dans le DOM
     container.append(div);
@@ -64,19 +65,19 @@ const buildProductDiv = (ProductDiv,container) => {
     p.innerHTML = ProductDiv.description
     h4.innerHTML = "Couleurs"
     h4b.innerHTML = "Quantité"
+
     button.innerHTML = "Ajouter au panier"
     button.setAttribute("data-product", JSON.stringify(ProductDiv)) // On crée un attribut "data-product" sur le bouton qui stringify les données de productdiv
-
     button.addEventListener("click", function(btnclick){ // Création d'un eventlistener sur le bouton quand on le clique, la fonction se lance
       // console.log("bouton cliqué");
       if (!quantity.checkValidity()){ // Si la quantité n'est pas composée que de chiffres..
         alert("Erreur , veuillez ne rentrer que des chiffres") // On afiche un message d'erreur
       }
       
-    const product = JSON.parse(btnclick.target.getAttribute("data-product")) // On crée une constante "product" qui est égale au parsage de "data-products"
+    const product = JSON.parse(btnclick.target.getAttribute("data-product")) // On crée une constante "product" qui est égale au parsage de "data-products" au clic sur "btnclick"
     // console.log(product);
     
-    const order = { // création d'une constante "order" quand on clique sur le boutton
+    const order = { // création d'une constante "order" qui est un objet, quand on clique sur le boutton
     id: product._id, // qui contient l'id du produit
     colors: colors.value, // la couleur qu'on a choisi 
     quantity: quantity.value, // et la quantité voulue
