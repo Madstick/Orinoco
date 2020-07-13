@@ -1,7 +1,7 @@
 function getcart(dataJSON){
   let cart; 
   if(dataJSON === undefined ){ // Si dataJSON n'est pas défini
-  cart = []; // Cart est un array
+  cart = []; // Cart est un array vide
   }
   else{
     cart = JSON.parse(dataJSON) // Sinon on le parse
