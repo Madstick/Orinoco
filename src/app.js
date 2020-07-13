@@ -1,6 +1,6 @@
 const container = document.getElementById("products")
 
-ajax("http://localhost:3000/api/teddies").then(function(data){ // On fait la requête ajax puis on fait une promesse avec la fonction "data"
+ajax("http://localhost:3000/api/teddies").then(function(data){ // On fait la requête ajax puis on fait une promesse avec la fonction qui a comme paramètre "data"
   // console.log(data)
   for(let teddyInfo of data){ // Pour chaque "teddyinfo" de data
   buildTeddyDiv(teddyInfo,container); // On crée un "buildTeddyDiv" contenant les données recues par le serveur, et son container

@@ -88,7 +88,7 @@ const buildProductDiv = (ProductDiv,container) => {
     cart.push(order) // On rajoute les données de "order" dans l'array "cart" crée avec getcart.js
     localStorage.setItem("cart",JSON.stringify(cart)) // On stocke l'array dans le local storage, et on le convertit en chaîne JSON
 
-    if (confirm("Voulez vous voir votre panier?")){ // Quand on clique sur le boutton on à l'option de voir le panier directement
+    if (confirm("Voulez vous voir votre panier?")){ // Quand on clique sur le bouton on à l'option de voir le panier directement
       window.location.href = "panier.html" // On spécifie l'url du panier
     }})
     
