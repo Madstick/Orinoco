@@ -1,7 +1,11 @@
-let cart = localStorage.cart; // On crée une variable cart qui est égale au localstorage
-if(cart === undefined ){ // Si cart n'est pas défini
-cart = []; // Cart est un array
+function getcart(dataJSON){
+  let cart; 
+  if(dataJSON === undefined ){ // Si dataJSON n'est pas défini
+  cart = []; // Cart est un array
+  }
+  else{
+    cart = JSON.parse(dataJSON) // Sinon on le parse
+  } 
+  return cart
 }
-else{
-  cart = JSON.parse(cart) // Sinon on le parse
-}
+let cart = getcart(localStorage.cart); // On crée une variable cart qui est égale au localstorage
